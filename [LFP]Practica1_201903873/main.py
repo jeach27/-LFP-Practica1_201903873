@@ -1,7 +1,7 @@
 import practica
 
 def main():
-  practica
+  practica.Menu()
 
 
 if __name__=='__main__':

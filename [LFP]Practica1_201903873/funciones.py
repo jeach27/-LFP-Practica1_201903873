@@ -1,6 +1,7 @@
 from tkinter import filedialog
 
 def Menu():
+    
     print('---------Menu principal-------------')
     print('Elija una opcion')
     print('1.Cargar Archivo\n2.Desplegar Listas Ordenadas\n3.Desplegar Búsquedas\n4.Desplegar Todas\n5.Desplegar Todas a Archivo\n6.Salir')
@@ -9,11 +10,12 @@ def abrirArchivo():
     archivo = filedialog.askopenfile( title = 'Cargar Archivo', filetypes = (('txt files','*.txt'),('all files','*.')))
     return archivo
 
-def accion(linea):
+def accion(linea,lista):
     linea = linea.rstrip('\n')
     linea = linea.replace('=',' ')
     dividida = linea.split(' ')
-    return dividida
+    lista.append(dividida)
+    
     
 def Ordenar(Lista):
     for no in range(len(Lista)-1,0,-1):
