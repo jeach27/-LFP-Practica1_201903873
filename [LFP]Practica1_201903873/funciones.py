@@ -88,6 +88,7 @@ def TodasBuscar(linea):
             f = linea[0]+': '+ s +'| Valor Buscado: '+ j +'| Encontrado en la posición: '+ h + '\n'
         else:
             f = linea[0]+': '+ s +'| Valor Buscado: '+ j +'| Encontrado en la posición: '+ 'Valor no Encontrado' + '\n'
+            
         return f    
 
     else:
