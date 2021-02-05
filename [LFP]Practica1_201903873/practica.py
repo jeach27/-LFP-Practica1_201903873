@@ -19,29 +19,37 @@ def Menu():
                 for linea in j:
                     funciones.accion(linea, lista)
             
-            print('\nEl archivo fue cargado correctamente\n')  
-            print(lista) 
+            print('\n--> El archivo fue cargado correctamente\n')  
+            #print(lista) 
                 
         # funciones.Menu()
         elif n=='2': 
             print('---------------Listas Ordenadas-------------\n')
             for i in range(0,len(lista)):
                 j=lista[i]
-                funciones.Ordenada(j)        
+                x = funciones.Ordenada(j)
+                y = funciones.TodasOrdenar(j) 
+                if x != -1:
+                    print(x) 
+                if y != -1:
+                    print(y)     
             #funciones.Menu()   
         elif n=='3': 
             print('-------------------Busquedas-------------------\n')
             for i in range(0,len(lista)):
                 j=lista[i]
-                funciones.Buscada(j)
+                x = funciones.Buscada(j)
+                y = funciones.TodasBuscar(j)
+                if x != -1:
+                    print(x) 
+                if y != -1:
+                    print(y)
             #funciones.Menu()  
         elif n=='4':
             print('---------------------Todas------------------------\n')
             for i in range(0,len(lista)):
                 j=lista[i]
-                
-                funciones.Buscada(j)
-                funciones.Ordenada(j)
+                funciones.Todas(j)
         # funciones.Menu()    
         elif n=='5':
             print('Todas a Archivos')
