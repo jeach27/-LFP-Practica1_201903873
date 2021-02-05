@@ -26,28 +26,68 @@ def Ordenar(Lista):
                 Lista[i+1] = temp
     return Lista
 
-def Buscar(x, Lista):
-    try:
-        indice = Lista.index(x)
-        return indice
-    #    print('El número esta en la posición {}'.format(indice))
-    except:
-        return -1
-    #    print('El número no se encuentra en la lista')
+def Buscar(Lista, x):
+    if x in Lista:
+        for i in range(0,len(Lista)):
+            if Lista[i]==x:
+                return str(i+1)
+    else:
+        return 'Valor no encontrado'
+
+
 
 def Ordenada(linea):
     if linea[2]=='ORDENAR':
         lineas = linea[1].split(',')
         line = Ordenar(lineas)
         string = ",".join(line)
-        s = ','.join(lineas)
-        f = linea[0]+': '+ s +' | Resultado de Ordenar: '+ string
+        f = linea[0]+': '+ linea[1] +' | Resultado de Ordenar: '+ string + '\n'
         print(f)
+    else: 
+        return -1
 
-def Buscada(linea, x):
+def Buscada(linea):
     if linea[2]=='BUSCAR':
         line = linea[3].split(',')
-        print(line)
+        lineas = linea[1].split(',')
+        s = ','.join(lineas)
+        for i in range(0,len(line)):
+            j=line[i]
+            l=Buscar(lineas, j)
+            f = linea[0]+': '+ s +'| Valor Buscado: '+ j +'| Encontrado en la posición: '+ l + '\n' 
+            print(f)
+    else:
+        return -1
+
+def TodasOrdenar(linea):
+    if linea[2]=='ORDENAR,BUSCAR':
+        Ordenada(linea)
+        
+    else:
+        return -1
+
+def TodasBuscar(linea):
+    if linea[2]=='ORDENAR,BUSCAR':
+        
+        Buscada(linea)
+    else:
+        return -1
+
+def Todas(linea):
+    if linea[2]=='ORDENAR,BUSCAR':
+        Buscada(linea)
+    else:
+        return -1
+
+
+
+
+
+
+
+
+
+        
 
 
     
