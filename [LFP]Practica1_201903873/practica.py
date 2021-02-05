@@ -2,6 +2,7 @@ import funciones
 import sys
 
 funciones.Menu()
+
 while True:
     
     n = input('Ingrese valor \n')
@@ -11,6 +12,8 @@ while True:
         for linea in j:
             i = funciones.accion(linea)
             print(i)
+            funciones.Ordenada(i)
+            
         funciones.Menu()
     elif n=='2': 
         print('Listas Ordenadas')

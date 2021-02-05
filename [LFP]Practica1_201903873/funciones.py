@@ -22,14 +22,32 @@ def Ordenar(Lista):
                 temp = Lista[i]
                 Lista[i] = Lista[i+1]
                 Lista[i+1] = temp
+    return Lista
 
 def Buscar(x, Lista):
     try:
         indice = Lista.index(x)
-        print('El número esta en la posición {}'.format(indice))
+        return indice
+    #    print('El número esta en la posición {}'.format(indice))
     except:
-        print('El número no se encuentra en la lista')
+        return -1
+    #    print('El número no se encuentra en la lista')
+
+def Ordenada(linea):
+    if linea[2]=='ORDENAR':
+        lineas = linea[1].split(',')
+        line = Ordenar(lineas)
+        string = ",".join(line)
+        s = ','.join(lineas)
+        f = linea[0]+': '+ s +' | Resultado de Ordenar: '+ string
+        print(f)
+
+def Buscada(linea, x):
+    if linea[2]=='BUSCAR':
+        line = linea[3].split(',')
+        print(line)
 
 
+    
 
 
