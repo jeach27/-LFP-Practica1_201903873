@@ -1,6 +1,7 @@
 import funciones
 import sys
 
+
 def Menu():
     lista=list()
     while True:
@@ -22,7 +23,6 @@ def Menu():
             print('\n--> El archivo fue cargado correctamente\n')  
             #print(lista) 
                 
-        # funciones.Menu()
         elif n=='2': 
             print('---------------Listas Ordenadas-------------\n')
             for i in range(0,len(lista)):
@@ -33,7 +33,7 @@ def Menu():
                     print(x) 
                 if y != -1:
                     print(y)     
-            #funciones.Menu()   
+               
         elif n=='3': 
             print('-------------------Busquedas-------------------\n')
             for i in range(0,len(lista)):
@@ -44,25 +44,31 @@ def Menu():
                     print(x) 
                 if y != -1:
                     print(y)
-            #funciones.Menu()  
+              
         elif n=='4':
             print('---------------------Todas------------------------\n')
+            
             for i in range(0,len(lista)):
                 j=lista[i]
                 funciones.Todas(j)
-        # funciones.Menu()    
+            
         elif n=='5':
+            Final=list()
             print('Todas a Archivos')
-        # funciones.Menu()
+            for i in range(0,len(lista)):
+                j=lista[i]
+                Final.append(funciones.TodasArchivos(j))
+            funciones.archivo(Final)
+        
         elif n=='6':
             print('--------------------Datos--------------------------')
             print('\nCarné:201903873')
             print('Nombre:Joaquin Emmanuel Aldair Coromac Huezo')
             print('Correo Electrónico: jeach.27@gmail.com')
             print('Curso: Laboratorio Lenguajes Formales y de Programación')
-            n = input("\n----> Pulsa la tecla 's' para salir\n")
-            if n=='s':
-                sys.exit()
+            print('\n----> Pulsa una tecla para salir\n')
+            input("")
+            sys.exit()
                 
         else:
             print ("No has pulsado una opción correcta")

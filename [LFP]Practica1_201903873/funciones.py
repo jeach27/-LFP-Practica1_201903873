@@ -1,4 +1,5 @@
 from tkinter import filedialog
+import webbrowser
 
 def Menu():
     
@@ -109,18 +110,45 @@ def Todas(lista):
         print(c)
 
 def TodasArchivos(lista):
+    Todas=list()
     x = Buscada(lista)
     if x!= -1:
-        print(x)
+        Todas.append(x)
     y = Ordenada(lista)
     if y!= -1:
-        print(y)
+        Todas.append(y)
     z = TodasBuscar(lista)
     if z!= -1:
-        print(z)
+        Todas.append(z)
     c = TodasOrdenar(lista)
     if c!= -1:
-        print(c)
+        Todas.append(c)
+    return Todas    
+
+def archivo(lista):
+
+   
+    
+    f = open('TodosArchivo.html','w')
+
+    f.write('<html>\n')
+    f.write('<head>\n')
+    f.write('</head>\n')
+    f.write('<body>\n')
+    f.write('<H1>TODAS EN ARCHIVO HTML</H1>\n')
+
+    for i in range(0, len(lista)):
+        x = lista[i]
+        for h in range(0,len(x)):
+            y = x[h]
+            f.write('<H3>'+ y +'</H3>\n')
+    
+    f.write('</body>\n')
+    f.write(' </html>\n')
+    
+    f.close()
+
+    webbrowser.open_new_tab('TodosArchivo.html')
 
 
 
