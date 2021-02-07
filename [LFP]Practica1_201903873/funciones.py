@@ -132,19 +132,22 @@ def archivo(lista):
     f = open('TodosArchivo.html','w')
 
     f.write('<html>\n')
-    f.write('<head>\n')
-    f.write('</head>\n')
-    f.write('<body>\n')
-    f.write('<H1>TODAS EN ARCHIVO HTML</H1>\n')
+    f.write('   <head>\n')
+    f.write('       <LINK REL=StyleSheet HREF="Estilo.css">\n')
+    f.write('   </head>\n')
+    f.write('   <body>\n')
+    f.write('       <table>\n')
+    f.write('           <tr>\n              <th>TODAS EN ARCHIVO HTML</th>\n            </tr>\n')
 
     for i in range(0, len(lista)):
         x = lista[i]
         for h in range(0,len(x)):
             y = x[h]
-            f.write('<H3>'+ y +'</H3>\n')
+            f.write('           <tr>\n              <td>'+ y +'                </td>\n           </tr>\n')
     
-    f.write('</body>\n')
-    f.write(' </html>\n')
+    f.write('       </table>\n')
+    f.write('   </body>\n')
+    f.write('</html>\n')
     
     f.close()
 
