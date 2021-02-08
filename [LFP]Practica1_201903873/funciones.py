@@ -1,3 +1,4 @@
+import tkinter
 from tkinter import filedialog
 import webbrowser
 
@@ -9,8 +10,9 @@ def Menu():
 
 def abrirArchivo():
     archivo = filedialog.askopenfile( title = 'Cargar Archivo', filetypes = (('txt files','*.txt'),('all files','*.')))
+    #tkinter.Tk().destroy()
     return archivo
-
+    
 def accion(linea,lista):
     linea = linea.rstrip('\n')
     linea = linea.replace('=',' ')
